@@ -11,11 +11,18 @@ Buzz = GPIO.PWM(piezoPin, 440)
 
 try:
 	while True:
-	user_input = input("숫자 입력")
-	if user_input == '0','1','2','3','4','5','6','7'
-		GPIO.output(melody):
-			BUzz.ChangeFrequency
-			time.sleep(0.3)
+		user_input = input("숫자 입력:")
+		if user_input.isdigit():
+			index = int(user_input)
+			if 0 <= index <= 7:
+				Buzz.start(50)
+				Buzz.ChangeFrequency(melody[index])
+				time.sleep(0.3)
+				Buzz.stop()
+			else:
+				print("0과 7사이값 입력")
+		else:
+			print("0과 7사이값 입력")
 
 
 
