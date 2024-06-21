@@ -21,3 +21,7 @@
 
 - 리눅스 파이썬 컴파일 명령어 : python 파일이름.py
 - 실행끝내기 : Ctrl + c
+
+## 2일차
+- 가상환경 source ./env/bin/activate
+    - 빠져나오는방법 : deactivate
