@@ -12,14 +12,19 @@ app = Flask(__name__)
 def helle():
 	return "Hello World"
 
-@app.route("/led/<stack>")
-if state == "on":
-	GPIO.output(led_pin, GPIO.LOW)
-elif state == "off":
-	GPIO.output(led_pin, GPIO.HIGH)
-elif state == "clear":
-	GPIO.cleanup()
-	return "GPIO Cleanup()"
+@app.route("/led/<state>")
+def led_control(state):
+	if state == "on":
+		GPIO.output(led_pin, GPIO.LOW)
+		return "LED is ON"
+	elif state == "off":
+		GPIO.output(led_pin, GPIO.HIGH)
+		return "LED is OFF"
+	elif state == "clear":
+		GPIO.cleanup()
+		return "GPIO Cleanup()"
+	else:
+		return "Invalid command"
 
 if __name__=="__main__":
 	try:
