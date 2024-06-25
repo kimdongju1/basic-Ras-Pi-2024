@@ -1,11 +1,14 @@
 # 동일한 폴더 위치에 templates 폴더를 만들고 거기에 html파일을 저장한다.
 
 from flask import Flask, request, render_template
-from gpiozero import LED
+import RPi.GPIO as GPIO
 
-app = Falsk(__name__)
+app = Flask(__name__)
 
-red_lde = LED(21)
+led_pin = 21
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(led_pin, GPIO.OUT)
 
 @app.route('/')
 def home():
@@ -13,15 +16,15 @@ def home():
 
 @app.route('/data', methods = ['POST'])
 def data():
-		data = request.form['led']
+	data = request.form['led']
 
 	if(data == 'on'):
-		red_led.on()
+		GPIO.output(led_pin, GPIO.LOW)
 		return home()
 
 	elif(data == 'off'):
-		red_led.off()
+		GPIO.output(led_pin, GPIO.HIGH)
 		return home()
 
 if __name__=='__main__':
-	app.run(host = '0.0.0.0' , port = '80')
+	app.run(host = '0.0.0.0', port = '80')
