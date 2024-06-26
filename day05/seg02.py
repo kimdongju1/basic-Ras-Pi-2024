@@ -1,8 +1,8 @@
-# title : ioh024_FND02.py
+# title : seg02.py
 # date : 2024-06-26
 # desc : FND 제어 연습
 
-# 버튼을 클릭하면 FND 출력 숫자 변경
+# 버튼을 클릭하면 FND 출력 4자리숫자 변경
 
 import RPi.GPIO as GPIO
 import time
