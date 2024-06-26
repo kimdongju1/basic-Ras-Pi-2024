@@ -36,8 +36,8 @@ for pin in segment_pins.values():
     GPIO.output(pin, GPIO.LOW)
 
 # 공통 양극 핀을 출력으로 설정
-GPIO.setup(com_pin, GPIO.OUT)
-GPIO.output(com_pin, GPIO.HIGH)  # 공통 양극 핀을 HIGH로 설정 (공통 양극)
+#GPIO.setup(com_pin, GPIO.OUT)
+#GPIO.output(com_pin, GPIO.HIGH)  # 공통 양극 핀을 HIGH로 설정 (공통 양극)
 
 try:
     while True:
