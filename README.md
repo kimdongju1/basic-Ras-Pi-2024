@@ -30,3 +30,4 @@
 
 
 ## 3일차
+- GPIO 핀번호 확인 : gpio readall
