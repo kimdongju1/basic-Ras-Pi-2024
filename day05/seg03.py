@@ -19,7 +19,7 @@ segment_pins = {
     'dp': 6
 }
 
-com_pins = [5, 6, 13, 19]  # COM1, COM2, COM3, COM4 핀
+com_pins = [22, 23, 24, 25]  # COM1, COM2, COM3, COM4 핀
 btn_pin = 25  # 버튼 핀
 
 # 숫자 표시에 사용할 값 리스트의 리스트
